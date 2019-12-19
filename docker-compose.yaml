@@ -14,18 +14,13 @@ services:
     depends_on:
       - mysql_service
 
+    # Avoids having to download all dependencies every time
     volumes:
       - ~/.m2:/root/.m2
-
-    expose:
-      - "8080"
 
     working_dir: /app
 
     command: mvn -f ./pom.xml clean spring-boot:run
-
-    networks:
-      - test-network
 
 
   mysql_service:
@@ -37,7 +32,6 @@ services:
 
     environment:
       MYSQL_DATABASE: 'testdb'
-      MYSQL_USER: 'testuser'
       MYSQL_PASSWORD: 'root'
       MYSQL_ROOT_PASSWORD: 'root'
 
@@ -47,11 +41,6 @@ services:
     volumes:
       - testdb:/var/lib/mysql
 
-    networks:
-      - test-network
 
 volumes:
   testdb:
-
-networks:
-  test-network:
