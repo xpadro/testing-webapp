@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+
+    container_name: test-web
+
+    ports:
+      - "8080:8080"
+
+    depends_on:
+      - mysql_service
+
+    volumes:
+      - ~/.m2:/root/.m2
+
+    expose:
+      - "8080"
+
+    working_dir: /app
+
+    command: mvn -f ./pom.xml clean spring-boot:run
+
+    networks:
+      - test-network
+
+
+  mysql_service:
+    image: mysql:8
+
+    container_name: mysql_db
+
+    restart: always
+
+    environment:
+      MYSQL_DATABASE: 'testdb'
+      MYSQL_USER: 'testuser'
+      MYSQL_PASSWORD: 'root'
+      MYSQL_ROOT_PASSWORD: 'root'
+
+    ports:
+      - "3306"
+
+    volumes:
+      - testdb:/var/lib/mysql
+
+    networks:
+      - test-network
+
+volumes:
+  testdb:
+
+networks:
+  test-network:
