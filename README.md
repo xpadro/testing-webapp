@@ -50,3 +50,23 @@ Run it:
 ## Execution
 
 `http://localhost:8080/cities`
+
+
+## Connect to DB
+In order to access the data in the MySQL database, first connect to the container:
+
+`docker exec -it mysql_db bash`
+
+Connect to the database, using root/root as its credentials:
+
+```
+mysql -u root -p
+ > root
+```
+
+Check the data:
+
+```
+USE testdb;
+SELECT * FROM city;
+```
