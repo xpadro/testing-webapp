@@ -18,7 +18,7 @@ public class CityController {
     }
 
     @GetMapping(value = "/cities", produces = "application/json")
-    public List<City> getCities() {
+    public List<CityData> getCities() {
         return cityService.findAll();
     }
 }
