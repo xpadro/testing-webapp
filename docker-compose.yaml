@@ -38,9 +38,10 @@ services:
     ports:
       - "3306"
 
-    volumes:
-      - testdb:/var/lib/mysql
+    command: --init-file /data/application/init.sql
 
+    volumes:
+      - ./sql/init.sql:/data/application/init.sql
 
 volumes:
   testdb:

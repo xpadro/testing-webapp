@@ -22,6 +22,8 @@ This works for Docker for Mac 17.05 and below (For other operating systems, chec
 
 This is the IP being used by the HospitalClient in the testing webapp in order to connect to the external service. If you use another IP, you will have to also change the HospitalClient class.
 
+****
+
 **External service**
 
 Pull the image from DockerHub:
