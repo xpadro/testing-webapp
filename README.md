@@ -13,6 +13,7 @@ In addition, this app makes an HTTP call to an external service.
 
 ## Installation
 **Network**
+
 In order to be able for our test web application inside the container to access another web application on the host machine, we have to attach an IP alias to your host network interface (This works for Docker for Mac 17.05 and below):
 
 `sudo ifconfig lo0 alias 123.123.123.123/24`
