@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.util.Collections.emptyList;
+
 @Service
 public class CityService {
 
@@ -26,6 +28,12 @@ public class CityService {
                 .stream()
                 .map(city -> getCityHospitals(city.getName()))
                 .collect(Collectors.toList());
+    }
+
+    CityData find(final String cityName) {
+        return cityRepository.findByName(cityName)
+                .map(city -> getCityHospitals(city.getName()))
+                .orElse(new CityData(cityName, emptyList()));
     }
 
     private CityData getCityHospitals(String cityName) {
