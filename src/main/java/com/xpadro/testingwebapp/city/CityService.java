@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static java.util.Collections.emptyList;
@@ -27,17 +28,18 @@ public class CityService {
         return cityRepository.findAll()
                 .stream()
                 .map(city -> getCityHospitals(city.getName()))
+                .filter(Optional::isPresent)
+                .map(Optional::get)
                 .collect(Collectors.toList());
     }
 
-    CityData find(final String cityName) {
+    Optional<CityData> find(final String cityName) {
         return cityRepository.findByName(cityName)
-                .map(city -> getCityHospitals(city.getName()))
-                .orElse(new CityData(cityName, emptyList()));
+                .flatMap(city -> getCityHospitals(city.getName()));
     }
 
-    private CityData getCityHospitals(String cityName) {
+    private Optional<CityData> getCityHospitals(String cityName) {
         List<Hospital> hospitals = hospitalClient.getHospitals(cityName);
-        return new CityData(cityName, hospitals);
+        return Optional.of(new CityData(cityName, hospitals));
     }
 }
