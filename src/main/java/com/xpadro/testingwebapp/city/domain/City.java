@@ -1,4 +1,4 @@
-package com.xpadro.testingwebapp;
+package com.xpadro.testingwebapp.city.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

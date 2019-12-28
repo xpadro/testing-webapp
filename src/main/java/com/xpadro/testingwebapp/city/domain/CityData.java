@@ -1,4 +1,6 @@
-package com.xpadro.testingwebapp;
+package com.xpadro.testingwebapp.city.domain;
+
+import com.xpadro.testingwebapp.hospital.Hospital;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.xpadro.testingwebapp;
+package com.xpadro.testingwebapp.hospital;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

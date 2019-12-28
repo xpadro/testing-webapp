@@ -1,4 +1,4 @@
-package com.xpadro.testingwebapp;
+package com.xpadro.testingwebapp.hospital;
 
 public class Hospital {
     private String name;

@@ -1,5 +1,8 @@
-package com.xpadro.testingwebapp;
+package com.xpadro.testingwebapp.city;
 
+import com.xpadro.testingwebapp.city.domain.CityData;
+import com.xpadro.testingwebapp.hospital.Hospital;
+import com.xpadro.testingwebapp.hospital.HospitalClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +21,7 @@ public class CityService {
         this.hospitalClient = hospitalClient;
     }
 
-    public List<CityData> findAll() {
+    List<CityData> findAll() {
         return cityRepository.findAll()
                 .stream()
                 .map(city -> getCityHospitals(city.getName()))
