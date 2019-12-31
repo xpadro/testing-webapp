@@ -1,6 +1,7 @@
 package com.xpadro.testingwebapp.hospital;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -22,7 +23,8 @@ import static java.util.Collections.emptyList;
  */
 @Service
 public class HospitalClient {
-    private static final String SERVICE_URL = "http://123.123.123.123:8081/cities/%s/hospitals";
+    @Value("${hospital.client.url}")
+    private String serviceUrl;
 
     private final RestTemplate restTemplate;
 
@@ -32,7 +34,7 @@ public class HospitalClient {
     }
 
     public List<Hospital> getHospitals(String city) {
-        String url = String.format(SERVICE_URL, city);
+        String url = String.format(serviceUrl, city);
         ResponseEntity<Hospital[]> response = restTemplate.getForEntity(url, Hospital[].class);
         Hospital[] hospitals = response.getBody();
 
