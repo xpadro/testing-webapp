@@ -29,7 +29,7 @@ public class HospitalClientIT {
 
 
     @Test
-    public void test() {
+    public void shouldMapServiceResponse() {
         String expected = "[{\"name\":\"Hospital de Barcelona\"},{\"name\":\"Hospital Clinic\"}]";
 
         stubFor(get(urlEqualTo("/cities/test/hospitals"))
