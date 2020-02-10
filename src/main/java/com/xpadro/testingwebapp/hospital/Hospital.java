@@ -1,6 +1,8 @@
 package com.xpadro.testingwebapp.hospital;
 
-public class Hospital {
+import java.io.Serializable;
+
+public class Hospital implements Serializable {
     private String name;
 
     public String getName() {

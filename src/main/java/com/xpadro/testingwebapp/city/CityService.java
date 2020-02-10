@@ -33,7 +33,7 @@ public class CityService {
                 .collect(Collectors.toList());
     }
 
-    Optional<CityData> find(final String cityName) {
+    public Optional<CityData> find(final String cityName) {
         return cityRepository.findByName(cityName)
                 .flatMap(city -> getCityHospitals(city.getName()));
     }
