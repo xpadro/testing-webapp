@@ -1,5 +1,6 @@
-package com.xpadro.testingwebapp;
+package com.xpadro.testingwebapp.contract;
 
+import com.xpadro.testingwebapp.TestingWebappApplication;
 import com.xpadro.testingwebapp.city.CityController;
 import com.xpadro.testingwebapp.city.CityService;
 import com.xpadro.testingwebapp.city.domain.CityData;

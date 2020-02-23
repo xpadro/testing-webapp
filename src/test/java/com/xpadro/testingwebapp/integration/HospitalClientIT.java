@@ -1,6 +1,7 @@
-package com.xpadro.testingwebapp;
+package com.xpadro.testingwebapp.integration;
 
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
+import com.xpadro.testingwebapp.TestingWebappApplication;
 import com.xpadro.testingwebapp.hospital.Hospital;
 import com.xpadro.testingwebapp.hospital.HospitalClient;
 import org.junit.Rule;
