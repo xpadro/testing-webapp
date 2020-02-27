@@ -44,7 +44,7 @@ Clone this repository and from the root folder, build it with docker compose:
 
 Run it:
 
-`docker-compose run`
+`docker-compose up`
 
 
 ## Execution
