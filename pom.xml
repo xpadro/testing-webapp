@@ -24,7 +24,7 @@
 		<mysql.version>8.0.18</mysql.version>
 		<testcontainers-mysql.version>1.12.4</testcontainers-mysql.version>
 		<wiremock.version>2.25.1</wiremock.version>
-		<h2.version>1.4.194</h2.version>
+		<h2.version>2.0.206</h2.version>
 	</properties>
 
 	<dependencies>
