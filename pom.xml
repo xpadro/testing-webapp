@@ -21,7 +21,7 @@
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
 		<spring-cloud-contract.version>2.0.2.RELEASE</spring-cloud-contract.version>
-		<mysql.version>8.0.18</mysql.version>
+		<mysql.version>8.0.28</mysql.version>
 		<testcontainers-mysql.version>1.12.4</testcontainers-mysql.version>
 		<wiremock.version>2.25.1</wiremock.version>
 		<h2.version>1.4.194</h2.version>
